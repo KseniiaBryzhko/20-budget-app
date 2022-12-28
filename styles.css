@@ -1,0 +1,154 @@
+/* підключення шрифтів */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+/* кореневий елемент */
+:root {
+  --primary: #51f129;
+  --positive: #4ca536;
+  --negative: #df1414;
+}
+
+/* видима частина вікна браузера */
+body {
+  padding: 0;
+  margin: 0;
+  background: black;
+  color: white;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: "Poppins", sans-serif;
+}
+
+/* заголовок першого рівня */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* заголовок другого рівня */
+h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+/* блок для полів вводу лівої частини */
+.field {
+  position: relative;
+}
+
+/* підпис полів */
+label {
+  font-weight: normal;
+  color: #8e909d;
+  font-size: 0.875rem;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+/* поля введення даних */
+input[type="text"] {
+  background: #323645;
+  border-radius: 16px;
+  padding: 35px 20px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 85px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.25rem;
+  outline: none;
+  border: 2px solid transparent;
+}
+
+/* поля введення даних та підписи в фокусі */
+input[type="text"]:focus {
+  border: 2px solid var(--primary);
+}
+
+input[type="text"]:focus + label {
+  color: var(--primary);
+}
+
+/* основний контейнер */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0;
+  min-height: 100vh;
+}
+
+/* ліва панель */
+.add-panel {
+  background: #282a37;
+  padding: 170px 125px 180px;
+}
+
+/* нижня частина лівої панелі та її складові */
+.add-expense {
+  margin: 120px 0;
+  display: flex;
+  gap: 24px;
+}
+
+.add-expense-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* права панель */
+.expense-panel {
+  padding: 220px 125px 180px;
+}
+
+/* грід-таблиця правої частини та її складові */
+.expense-table {
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+}
+
+.expense-table div {
+  border-bottom: 2px solid #313131;
+  padding: 16px 0;
+}
+
+.delete-expense {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* нижня фіксована панель та її складові */
+.summary-panel {
+  background: white;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 125px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-label {
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.summary-amount {
+  font-weight: bold;
+  font-size: 3.375rem;
+  line-height: 5rem;
+}
+
+/* кольорові акценти для позитивного та негативного балансу бюджету */
+.summary-amount.positive {
+  color: var(--positive);
+}
+
+.summary-amount.negative {
+  color: var(--negative);
+}
